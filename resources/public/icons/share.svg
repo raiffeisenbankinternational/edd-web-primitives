@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / share</title>
+    <g id="Icons-/-share" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bounding-box-24" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+        <path d="M5,12 L5,19 L19,19 L19,12 L21,12 L21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,12 L5,12 Z M12.7142136,2.30710678 L18.2142136,7.80710678 L16.8,9.22132034 L13,5.42121356 L13,16 L11,16 L11,5.43521356 L7.21421356,9.22132034 L5.8,7.80710678 L11.3,2.30710678 C11.6905243,1.91658249 12.3236893,1.91658249 12.7142136,2.30710678 Z" id="share" fill="#2B2D33" fill-rule="nonzero"></path>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / refer</title>
+    <g id="Icons-/-refer" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bounding-box-24" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+        <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+        <g id="icons-/-arrow" transform="translate(13.083708, 16.404401) rotate(45.000000) translate(-13.083708, -16.404401) translate(5.083708, 8.404401)">
+            <rect id="bounding-box-24" fill="#FFFFFF" fill-rule="evenodd" opacity="0" x="0" y="0" width="16" height="16"></rect>
+            <path d="M13.3333333,2 C13.7015232,2 14,2.29847683 14,2.66666667 L14,10.6666667 L12.6666667,10.6666667 L12.6662621,4.276 L3.13807119,13.8047379 L2.19526215,12.8619288 L11.7232621,3.333 L5.33333333,3.33333333 L5.33333333,2 L13.3333333,2 Z" id="arrow" fill="#2B2D33" fill-rule="nonzero"></path>
+        </g>
+        <polygon id="Path" fill="#2B2D33" fill-rule="nonzero" transform="translate(6.209139, 9.209139) rotate(135.000000) translate(-6.209139, -9.209139) " points="1.34721019 15.0138769 0.404401145 14.0710678 11.0710678 3.40440115 12.0138769 4.34721019"></polygon>
+    </g>
+</svg>

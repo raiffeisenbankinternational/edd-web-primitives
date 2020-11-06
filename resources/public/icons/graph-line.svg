@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Icons / graph-line</title>
+    <desc>Created with Sketch.</desc>
+    <g id="CA" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.4">
+        <g id="ICONS" transform="translate(-1079.000000, -612.000000)" fill="#2B2D33" fill-rule="nonzero">
+            <g id="Icons-/-graph-line" transform="translate(1077.000000, 610.000000)">
+                <path d="M4,2 L4,20 L22,20 L22,22 L3,22 C2.44771525,22 2,21.5522847 2,21 L2,21 L2,2 L4,2 Z M21,2 C21.5522847,2 22,2.44771525 22,3 L22,3 L22,10 L20,10 L20,5.414 L6.70710678,18.7071068 L5.29289322,17.2928932 L18.584,4 L14,4 L14,2 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

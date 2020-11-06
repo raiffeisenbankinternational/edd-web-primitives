@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / plus</title>
+    <g id="Icons-/-plus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bounding-box-24" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+        <g id="plus">
+            <g id="icon_plus">
+                <g>
+                    <g id="Group-60" transform="translate(2.000000, 2.000000)" fill="#2B2D33" fill-rule="nonzero">
+                        <path d="M10,18 C14.418278,18 18,14.418278 18,10 C18,5.581722 14.418278,2 10,2 C5.581722,2 2,5.581722 2,10 C2,14.418278 5.581722,18 10,18 Z M10,20 C4.4771525,20 0,15.5228475 0,10 C0,4.4771525 4.4771525,0 10,0 C15.5228475,0 20,4.4771525 20,10 C20,15.5228475 15.5228475,20 10,20 Z" id="Combined-Shape"></path>
+                        <polygon id="Path-9" transform="translate(10.000000, 10.000000) rotate(-90.000000) translate(-10.000000, -10.000000) " points="5 11 5 9 15 9 15 11"></polygon>
+                        <polygon id="Path-9" points="5 11 5 9 15 9 15 11"></polygon>
+                    </g>
+                    <rect id="bounding-box-24-copy" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

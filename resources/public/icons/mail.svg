@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / mail</title>
+    <g id="Icons-/-mail" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bounding-box-24" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+        <path d="M21,4 C21.5522847,4 22,4.44771525 22,5 L22,19 C22,19.5522847 21.5522847,20 21,20 L3,20 C2.44771525,20 2,19.5522847 2,19 L2,5 C2,4.44771525 2.44771525,4 3,4 L21,4 Z M20,7.248 L12.6,12.8 C12.2444444,13.0666667 11.7555556,13.0666667 11.4,12.8 L4,7.249 L4,18 L20,18 L20,7.248 Z M18.331,6 L5.668,6 L12,10.75 L18.331,6 Z" id="mail" fill="#2B2D33" fill-rule="nonzero"></path>
+    </g>
+</svg>

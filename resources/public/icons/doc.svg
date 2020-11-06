@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / doc</title>
+    <g id="Icons-/-doc" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bounding-box-24" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+        <path d="M14,2 C14.2652165,2 14.5195704,2.10535684 14.7071068,2.29289322 L19.7071068,7.29289322 C19.8946432,7.4804296 20,7.73478351 20,8 L20,21 C20,21.5522847 19.5522847,22 19,22 L5,22 C4.44771525,22 4,21.5522847 4,21 L4,3 C4,2.44771525 4.44771525,2 5,2 L14,2 Z M11.999,4 L6,4 L6,20 L18,20 L17.999,10 L13,10 C12.4477153,10 12,9.55228475 12,9 L11.999,4 Z M17.585,8 L13.999,4.414 L14,8 L17.585,8 Z" id="doc" fill="#2B2D33" fill-rule="nonzero"></path>
+    </g>
+</svg>

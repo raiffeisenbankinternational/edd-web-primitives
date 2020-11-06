@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / clear</title>
+    <g id="Icons-/-clear" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bounding-box-24" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+        <path d="M9,2 L9,7.004 L14,7.00434336 L14,9.00579114 L9,9.005 L9,14 L7,14 L7,9.005 L2,9.00579114 L2,7.00434336 L7,7.004 L7,2 L9,2 Z" id="add" fill="#2B2D33" fill-rule="nonzero" transform="translate(8.000000, 8.000000) rotate(-315.000000) translate(-8.000000, -8.000000) "></path>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / favorite</title>
+    <g id="Icons-/-favorite" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bounding-box-24" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+        <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+        <g id="Shape-3" transform="translate(3.000000, 4.000000)" fill="#2B2D33" fill-rule="nonzero">
+            <g id="Shape-2">
+                <path d="M13.05,0 C11.484,0 9.981,0.70626703 9,1.82234332 C8.019,0.70626703 6.516,0 4.95,0 C2.178,0 0,2.11008174 0,4.79564033 C0,8.09155313 3.06,10.7771117 7.695,14.8577657 L9,16 L10.305,14.8490463 C14.94,10.7771117 18,8.09155313 18,4.79564033 C18,2.11008174 15.822,0 13.05,0 Z M9.0875,12.9194139 L9,13 L8.9125,12.9194139 C4.7475,9.44615385 2,7.14945055 2,4.82051282 C2,3.20879121 3.3125,2 5.0625,2 C6.41,2 7.7225,2.7978022 8.18625,3.9018315 L9.8225,3.9018315 C10.2775,2.7978022 11.59,2 12.9375,2 C14.6875,2 16,3.20879121 16,4.82051282 C16,7.14945055 13.2525,9.44615385 9.0875,12.9194139 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
