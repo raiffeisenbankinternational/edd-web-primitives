@@ -5,7 +5,7 @@
             [reagent.core :as r]
 
             [web.primitives.db :as db]
-            [web.primitives.data-display.core :refer [RawIcon]]
+            [web.primitives.icons.core :refer [EditIcon]]
             [web.primitives.text-editor.utils :refer [sun-editor-button-list handle-on-paste handle-on-drop handle-on-save]]
             [web.primitives.text-editor.model :as model]))
 
@@ -30,7 +30,7 @@
                   (if (true? (:disable props)) {:opacity 0.5}))
        :disabled (:disable props)}
       (if (:id props) {:id       (str "edit-button-" (:id props))}))
-     [RawIcon {:name "edit"}]]]])
+     [EditIcon]]]])
 
 (defn- edit-mode [props set-read-only-mode]
   [:> Grid (merge

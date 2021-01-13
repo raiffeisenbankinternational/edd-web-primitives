@@ -5,7 +5,7 @@
    [devcards.core :refer-macros (defcard-rg)]
    ["@material-ui/core" :refer [Grid]]
 
-   [web.primitives.data-display.core :refer [RawIcon]]
+   [web.primitives.icons.core :refer [ClearIcon]]
    [web.primitives.lab.core :refer [RawAlert]]
    [web.devcards.utils :refer [apply-stiles]]))
 
@@ -55,4 +55,4 @@
                               :xs 1
                               :alignContent "center"
                               :justify "flex-end"}
-                     [RawIcon {:name "clear"}]]]]]]))
+                     [ClearIcon]]]]]]))

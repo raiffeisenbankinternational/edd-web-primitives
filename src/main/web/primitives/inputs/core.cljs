@@ -1,20 +1,34 @@
 (ns web.primitives.inputs.core
   (:require [re-frame.core :as rf]
             [reagent.core :as r]
-            ["@material-ui/core" :refer [Badge FormControl CircularProgress InputLabel Select Switch
-                                         TextField Button Checkbox FormControlLabel]]
+            ["@material-ui/core" :refer [Badge FormControl FormLabel CircularProgress InputLabel Select Switch
+                                         TextField Button Fab IconButton Checkbox FormControlLabel InputAdornment Zoom
+                                         RadioGroup Radio]]
             ["@material-ui/pickers" :refer [DesktopDatePicker LocalizationProvider]]
             ["@date-io/luxon/build/index.esm.js" :default luxon]
 
+            [web.primitives.layout.core :refer [RawGrid]]
             [web.primitives.inputs.utils :refer [handle-input-change adapted-text-field jsx->clj
                                                  handle-date-picker-date-change invalid-date?
                                                  clean-switch-props handle-switcher-change]]
             [web.primitives.inputs.model :as model]))
 
-(defn RawTextField [props]
+(defn RawTextField [{:keys [prefix suffix] :as props}]
   [adapted-text-field
    (merge {:full-width true :color "secondary"}
           (dissoc props :transform-func)
+          (when
+           (some? (or prefix suffix))
+            {:InputProps
+             (merge
+              (when (some? prefix)
+                {:startAdornment (r/as-element
+                                  [:> InputAdornment {:position "start"} prefix])})
+
+              (when (some? suffix)
+                {:endAdornment   (r/as-element
+                                  [:> InputAdornment {:position "end"} suffix])}))})
+
           {:on-change (fn [event] (handle-input-change event
                                                        (get props :on-change
                                                             (fn [] (println "BLL")))
@@ -136,6 +150,21 @@
 (defn RawButton [props inner-text]
   [:> Button props inner-text])
 
+(defn RawFab
+  ([props icon]
+   [:> Zoom {:in true :timeout 300}
+    [:> Fab (merge {:color "primary"} props) icon]])
+
+  ([props icon inner-text]
+   [:> Zoom {:in true :timeout 300}
+    [:> Fab (merge
+             {:color "primary"
+              :variant "extended"}
+             props) icon [RawGrid {:style {:margin-left 5}} inner-text]]]))
+
+(defn RawIconButton [props icon]
+  [:> IconButton props icon])
+
 (defn RawCheckbox [{:keys [label label-placement disabled]
                     :or {label-placement "end" disabled false} :as props}]
   [:> FormControlLabel
@@ -143,3 +172,16 @@
     :label label
     :disabled disabled
     :label-placement label-placement}])
+
+(defn RawRadioGroup [{:keys [label children default-value defaultValue row on-change]
+                      :or {row false on-change #(print (-> % .-target .-value))} :as props}]
+  [:> FormControl {:on-change on-change}
+   [:> FormLabel {} label]
+   (into
+    [:> RadioGroup {:row row :defaultValue (or default-value defaultValue)}]
+
+    (for [item children]
+      [:> FormControlLabel
+       (merge
+        {:control (r/as-element [:> Radio (merge {:color "secondary"})])}
+        item)]))])

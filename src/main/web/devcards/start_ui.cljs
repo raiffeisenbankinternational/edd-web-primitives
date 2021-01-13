@@ -15,7 +15,20 @@
    [web.devcards.skeleton]
    [web.devcards.switch]
    [web.devcards.checkbox]
-   [web.devcards.toggle-button]))
+   [web.devcards.toggle-button]
+   [web.devcards.tooltip]
+   [web.devcards.card]
+   [web.devcards.typography]
+   [web.devcards.grid]
+   [web.devcards.list]
+   [web.devcards.icon-button]
+   [web.devcards.dialog]
+   [web.devcards.snackbar]
+   [web.devcards.divider]
+   [web.devcards.tabs]
+   [web.devcards.snackbar]
+   [web.devcards.floating-action-button]
+   [web.devcards.radio]))
 
 (defn ^:export init []
   (dc/start-devcard-ui!))

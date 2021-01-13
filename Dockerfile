@@ -31,12 +31,16 @@ RUN set -e && npx shadow-cljs -A:dev compile
 RUN ls -la /dist
 RUN set -e && npx shadow-cljs release devcards
 
+RUN set -e && clojure -A:test:runner
+RUN set -e && npx shadow-cljs -A:dev compile test
+RUN set -e && npx shadow-cljs -A:dev compile
+
 RUN ls -la /dist
 RUN cp -r resources/public/* /dist/s3/
 RUN sed -i 's/version=1/version='${BUILD_ID}'/g' /dist/s3/index.html
 RUN ls -la /dist
 
-RUN clj -Sdeps '{:deps {luchiniatwork/cambada {:mvn/version "1.0.2"}}}' \
+RUN set -e && clj -Sdeps '{:deps {luchiniatwork/cambada {:mvn/version "1.0.2"}}}' \
                       -m cambada.jar \
                       --app-version "1.0.b${BUILD_ID}" \
                       --app-artifact-id "${PROJECT_NAME}" \

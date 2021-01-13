@@ -27,8 +27,11 @@
 (defn RawSkeleton [props]
   [:> Skeleton props])
 
-(defn RawToggleButtonGroup [props & content]
-  [:> ToggleButtonGroup props content])
+(defn RawToggleButtonGroup [props & children]
+  (into
+   [:> ToggleButtonGroup props]
+   (for [child children]
+     (r/as-element child))))
 
 (defn RawToggleButton [props content]
   [:> ToggleButton props content])

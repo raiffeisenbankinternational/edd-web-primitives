@@ -13,9 +13,12 @@
   (fn [data-atom _]
     (apply-stiles [RawToggleButtonGroup
                    {:id        "button"
-                    :on-change (fn [] (print "on-click"))}
-                   [RawToggleButton {:value :one :selected (= :one (:selected @data-atom))} "One"]
-                   [RawToggleButton {:value :two :selected (= :two (:selected @data-atom))} "Two"]
-                   [RawToggleButton {:value :three :selected (= :three (:selected @data-atom))} "Three"]]))
+                    :orientation "horizontal"}
+                   [RawToggleButton {:orientation "horizontal" :value :one :selected (= :one (:selected @data-atom))
+                                     :on-click (fn [] (swap! data-atom merge {:selected :one}))} "One"]
+                   [RawToggleButton {:value :two :selected (= :two (:selected @data-atom))
+                                     :on-click (fn [] (swap! data-atom merge {:selected :two}))} "Two"]
+                   [RawToggleButton {:value :three :selected (= :three (:selected @data-atom))
+                                     :on-click (fn [] (swap! data-atom merge {:selected :three}))} "Three"]]))
 
   (r/atom {:selected :one}))

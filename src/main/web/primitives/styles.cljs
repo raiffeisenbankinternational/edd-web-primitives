@@ -1,13 +1,46 @@
 (ns web.primitives.styles)
 
 (def theme
-  {:palette    {:primary   {"main" "rgba(254, 230, 0)"}
-                :secondary {"main" "rgba(0, 0, 0, 0.86)"}}
+  {:palette        {:primary   {:main "#fee600"
+                                :dark "#fed500"
+                                :light "#fff483"}
+                    :secondary {:main "#037080"
+                                :dark "#004454"
+                                :light "#b3d4d8"}
+                    :success {:main "#35b37e"
+                              :dark "#0b7d3e"
+                              :light "#c2e8d8"}
+                    :info {:main "#00c2ff"
+                           :dark "#0093ff"
+                           :light "#b2ecff"}
+                    :warning {:main "#ff581e"
+                              :dark "#ff1e03"
+                              :light "#ffccbb"}
+                    :error {:main "#e61e33"
+                            :dark "#cf030a"
+                            :light "#f7bbc1"}
+                    :grey {:050 "#fbfbfb"
+                           :100 "#f8f8f8"
+                           :200 "#edeeee"
+                           :300 "#e9eaea"
+                           :400 "#d5d5d6"
+                           :500 "#aaabad"
+                           :600 "#808185"
+                           :700 "#55575c"
+                           :800 "#404247"
+                           :900 "#212121"}}
+   :accent-palette {:dark "rgb(3, 68, 84)"
+                    :default "rgb(3, 112, 128)"
+                    :60 "rgb(104, 169, 179)"
+                    :30 "rgb(179, 212, 216)"
+                    :20 "rgb(229, 240, 242)"}
    :typography {:font-family "Verdana,Roboto,Arial,Quicksand"}
    :z-index    {:app-bar 1200
                 :drawer  1100}
    :overrides  {:MuiCard
-                {:root {:border-radius "0.5rem"}}
+                {:root {:border-radius "12px" :width "100%"}}
+                :MuiCardContent
+                {:root {:padding "24px"}}
                 :MuiFormControlLabel
                 {:root
                  {:margin-left "-3px"}}
@@ -15,33 +48,33 @@
                 {:tile
                  {:overflow "inherit"}}
                 :MuiTypography
-                {:h1 {:font-size "22px"
+                {:h1 {:font-size "34px"
                       :line-height "40px"
-                      :font-weight "black"
+                      :font-weight "900!important"
                       :letter-spacing "0.2px"}
                  :h2 {:font-size "34px"
                       :line-height "40px"
-                      :font-weight "normal"
+                      :font-weight "400!important"
                       :letter-spacing "0.2px"}
                  :h3 {:font-size "22px"
                       :line-height "25px"
-                      :font-weight "normal"
+                      :font-weight "400!important"
                       :letter-spacing "0.13px"}
                  :h4 {:font-size "20px"
                       :line-height "24px"
-                      :font-weight "normal"
+                      :font-weight "600!important"
                       :letter-spacing "0.1px"}
                  :h5 {:font-size "20px"
                       :line-height "24px"
-                      :font-weight "bold"
+                      :font-weight "400!important"
                       :letter-spacing "0.15px"}
                  :h6 {:font-size "18px"
                       :line-height "21px"
-                      :font-weight "normal"
+                      :font-weight "400!important"
                       :letter-spacing "0.1px"}
                  :subtitle1 {:font-size "16px"
                              :line-height "20px"
-                             :font-weight "normal"
+                             :font-weight "400!important"
                              :letter-spacing "0.18px"}
                  :subtitle2 {:font-size "16px"
                              :line-height "19px"
@@ -50,19 +83,19 @@
                              :color "#6d7278"}
                  :body1 {:font-size "14px"
                          :line-height "20px"
-                         :font-weight "normal"
+                         :font-weight "400!important"
                          :letter-spacing "0.16px"}
                  :body2 {:font-size "14px"
                          :line-height "20px"
-                         :font-weight "normal"
+                         :font-weight "400!important"
                          :letter-spacing "0.15px"}
                  :caption {:font-size "12px"
                            :line-height "14px"
-                           :font-weight "normal"
+                           :font-weight "500!important"
                            :letter-spacing "0px"}
                  :overline {:font-size "12px"
                             :line-height "14px"
-                            :font-weight "normal"
+                            :font-weight "400!important"
                             :letter-spacing "0.16px"}
                  :button {:font-size "14px"
                           :line-height "16px"
@@ -82,6 +115,9 @@
                   :min-width "8rem"}
                  :outlined
                  {:border "solid 1px #e9eaea"}}
+                :MuiToggleButton
+                {:root {:border-radius 8
+                        :padding 1}}
                 :MuiToolbar
                 {:regular
                  {:min-height "100px"
@@ -109,7 +145,8 @@
                 :MuiAccordionSummary
                 {:root
                  {:padding 0
-                  "&.Mui-expanded" {:margin 0}}
+                  "&.Mui-expanded" {:min-height 0
+                                    :margin 0}}
                  :content {"&.Mui-expanded" {:margin "12px 0"}}}
                 :MuiAutocomplete
                 {:loading {:display "none"}}
@@ -128,6 +165,8 @@
                 {:root {:width "100%"}}
                 :MuiAlert
                 {:message {:width "100%"}
-                 :root {:width "100%"}}}})
-
-
+                 :root {:width "100%"}}
+                :MuiDialogTitle
+                {:root {:padding "24px 24px 4px 24px"}}
+                :MuiFormLabel
+                {:root {"&.Mui-focused" {:color "rgba(0, 0, 0, 0.54)"}}}}})
