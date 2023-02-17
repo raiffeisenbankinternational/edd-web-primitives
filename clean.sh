@@ -1,9 +1,12 @@
 #!/bin/bash
 
-rm -rf .clj-kondo/.cache
-rm -rf .cpcache
+rm -rf package.json
+rm -rf package-lock.json
 rm -rf node_modules
+rm -rf .cpcache
 rm -rf .shadow-cljs
-rm -rf target
-rm package.json
-rm package-lock.json
+rm -rf resources/public/js
+rm -rf www/js
+rm -rf resources/public/js
+rm -rf .clj-kondo
+rm -rf .lsp

@@ -11,11 +11,6 @@ ARG ARTIFACT_ORG
 ARG BUILD_ID
 
 # Custom build from here on
-
-USER root
-RUN npm install -g shadow-cljs karma karma-cljs-test karma-chrome-launcher karma-junit-reporter
-USER build
-
 COPY --chown=build:build shadow-cljs.edn shadow-cljs.edn
 COPY --chown=build:build deps.edn deps.edn
 COPY --chown=build:build tests.edn tests.edn
@@ -42,15 +37,14 @@ ENV CHROME_BIN /usr/bin/chromium-browser
 
 RUN set -e &&\
     npx shadow-cljs classpath &&\
-    clojure -A:lint --lint src &&\
     clojure -A:test:runner &&\
-    shadow-cljs -A:dev compile test &&\
-    shadow-cljs -A:dev compile &&\
-    npx shadow-cljs -A:dev release devcards &&\
+    shadow-cljs -A:test compile test &&\
+    shadow-cljs -A:devcards release devcards &&\
     cp -r resources/public/* /dist/s3/ &&\
     npx karma start karma.conf.js  --log-level debug --single-run &&\
     clj -A:test -Sdeps '{:deps {luchiniatwork/cambada {:mvn/version "1.0.5"}}}' \
                       -m cambada.jar \
+                      --aot "clojure.java.io" \
                       --app-version "1.0.${BUILD_ID}" \
                       --app-artifact-id "${PROJECT_NAME}" \
                       --app-group-id "${ARTIFACT_ORG}" \

@@ -20,6 +20,7 @@
 (def RawList data-display-core/RawList)
 (def RawListItem data-display-core/RawListItem)
 (def RawListItemText data-display-core/RawListItemText)
+(def RawListItemButton data-display-core/RawListItemButton)
 (def RawListItemIcon data-display-core/RawListItemIcon)
 (def RawListSubheader data-display-core/RawListSubheader)
 (def RawDivider data-display-core/RawDivider)

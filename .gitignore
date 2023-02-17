@@ -21,3 +21,5 @@ package-lock.json
 .clj-kondo/
 .lsp/
 /bck-package.json
+*.log
+

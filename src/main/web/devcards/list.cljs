@@ -5,13 +5,18 @@
    [devcards.core :refer-macros (defcard-rg)]
 
    [web.devcards.utils :refer [apply-stiles]]
-   [web.primitives.components :refer [RawList RawListItem]]))
+   [web.primitives.components :refer [RawList
+                                      RawListItem
+                                      RawListItemText
+                                      RawListItemButton]]))
 
 (defcard-rg :list
   "## List"
   (apply-stiles
    [RawList {}
     [RawListItem {:button true} "Item 1"]
+    [RawListItemButton {:component "a"}
+     [RawListItemText {:primary "CkickMe"}]]
     [RawListItem {:button true} "Item 2"]
     [RawListItem {:button true} "Item 3"]
     [RawListItem {:button true} "Item 4"]

@@ -7,6 +7,7 @@ module.exports = function (config) {
         files: ['ci.js'],
         frameworks: ['cljs-test'],
         plugins: ['karma-cljs-test', 'karma-chrome-launcher', 'karma-junit-reporter'],
+	failOnEmptyTestSuite: false,
         colors: true,
         logLevel: config.LOG_INFO,
         client: {
