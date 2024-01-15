@@ -1,7 +1,7 @@
 (ns web.primitives.data-display.core
   (:require
    ["@mui/material/index" :refer [Avatar Badge Divider Grid
-                                  List ListItem ListItemText ListItemIcon ListSubheader ListItemButton
+                                  List ListItem ListItemText ListItemIcon ListSubheader
                                   Menu MenuItem MenuList
                                   Typography Tooltip
                                   Table TableBody TableCell TableContainer TableHead TableRow Chip]]))
@@ -36,9 +36,6 @@
 
 (defn RawListItemText [props content]
   [:> ListItemText props content])
-
-(defn RawListItemButton [props content]
-  [:> ListItemButton props content])
 
 (defn RawListItemIcon [props content]
   [:> ListItemIcon props content])

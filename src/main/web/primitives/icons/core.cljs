@@ -6,20 +6,28 @@
    ["@mui/icons-material/Add" :default Add]
    ["@mui/icons-material/AdminPanelSettings" :default AdminPanelSettings]
    ["@mui/icons-material/ArrowDownward" :default ArrowDownward]
+   ["@mui/icons-material/ArrowDropDown" :default ArrowDropDown]
+   ["@mui/icons-material/ArrowDropDownCircle" :default ArrowDropDownCircle]
+   ["@mui/icons-material/ArrowDropUp" :default ArrowDropUp]
    ["@mui/icons-material/ArrowUpward" :default ArrowUpward]
    ["@mui/icons-material/AssignmentInd" :default AssignmentInd]
    ["@mui/icons-material/Block" :default Block]
    ["@mui/icons-material/Business" :default Business]
+   ["@mui/icons-material/Calculate" :default Calculate]
    ["@mui/icons-material/CallMade" :default CallMade]
+   ["@mui/icons-material/Cached" :default Cached]
    ["@mui/icons-material/Chat" :default Chat]
    ["@mui/icons-material/ChatBubbleOutline" :default ChatBubbleOutline]
    ["@mui/icons-material/CheckCircleOutlineOutlined" :default CheckCircleOutlineOutlined]
    ["@mui/icons-material/ChromeReaderMode" :default ChromeReaderMode]
    ["@mui/icons-material/Clear" :default Clear]
    ["@mui/icons-material/Close" :default Close]
+   ["@mui/icons-material/ContentCopy" :default ContentCopy]
    ["@mui/icons-material/Delete" :default Delete]
    ["@mui/icons-material/Dialpad" :default Dialpad]
    ["@mui/icons-material/DirectionsRun" :default DirectionsRun]
+   ["@mui/icons-material/DoNotTouch" :default DoNotTouch]
+   ["@mui/icons-material/Download" :default Download]
    ["@mui/icons-material/Edit" :default Edit]
    ["@mui/icons-material/EmojiPeople" :default EmojiPeople]
    ["@mui/icons-material/ErrorOutline" :default ErrorOutline]
@@ -31,6 +39,7 @@
    ["@mui/icons-material/FindInPage" :default FindInPage]
    ["@mui/icons-material/FormatAlignLeftOutlined" :default FormatAlignLeftOutlined]
    ["@mui/icons-material/Forward" :default Forward]
+   ["@mui/icons-material/GetApp" :default GetApp]
    ["@mui/icons-material/HelpOutline" :default HelpOutline]
    ["@mui/icons-material/Home" :default Home]
    ["@mui/icons-material/HomeOutlined" :default HomeOutlined]
@@ -40,6 +49,8 @@
    ["@mui/icons-material/Launch" :default Launch]
    ["@mui/icons-material/Link" :default Link]
    ["@mui/icons-material/LinkOff" :default LinkOff]
+   ["@mui/icons-material/Logout" :default Logout]
+   ["@mui/icons-material/ManageSearch" :default ManageSearch]
    ["@mui/icons-material/MarkunreadMailbox" :default MarkunreadMailbox]
    ["@mui/icons-material/Menu" :default Menu]
    ["@mui/icons-material/MonetizationOn" :default MonetizationOn]
@@ -48,8 +59,10 @@
    ["@mui/icons-material/NoteAdd" :default NoteAdd]
    ["@mui/icons-material/NoteOutlined" :default NoteOutlined]
    ["@mui/icons-material/NotificationsNone" :default NotificationsNone]
+   ["@mui/icons-material/People" :default People]
    ["@mui/icons-material/Person" :default Person]
    ["@mui/icons-material/PersonSearch" :default PersonSearch]
+   ["@mui/icons-material/PictureAsPdf" :default PictureAsPdf]
    ["@mui/icons-material/PlaylistAdd" :default PlaylistAdd]
    ["@mui/icons-material/PlaylistAddCheck" :default PlaylistAddCheck]
    ["@mui/icons-material/Publish" :default Publish]
@@ -68,25 +81,28 @@
    ["@mui/icons-material/ChevronRight" :default ChevronRight]
    ["@mui/icons-material/TableChart" :default TableChart]
    ["@mui/icons-material/Update" :default Update]
-   ["@mui/icons-material/Download" :default Download]
-   ["@mui/icons-material/ArrowDropDown" :default ArrowDropDown]
-   ["@mui/icons-material/ArrowDropDownCircle" :default ArrowDropDownCircle]
-   ["@mui/icons-material/ArrowDropUp" :default ArrowDropUp]
-   ["@mui/icons-material/ContentCopy" :default ContentCopy]
    ["@mui/icons-material/Upload" :default Upload]
-   ["@mui/icons-material/ManageSearch" :default ManageSearch]
-   ["@mui/icons-material/Logout" :default Logout]
+   ["@mui/icons-material/Summarize" :default Summarize]
+   ["@mui/icons-material/Troubleshoot" :default Troubleshoot]
+   ["@mui/icons-material/Insights" :default Insights]
+   ["@mui/icons-material/Handyman" :default Handyman]
 
    [web.primitives.icons.utils :refer [handle-props]]))
 
 (defn AddIcon [props]
   [:> Add props])
 
+(defn DoNotTouchIcon [props]
+  [:> DoNotTouch props])
+
 (defn SaveIcon [props]
   [:> Save props])
 
 (defn DeleteIcon [props]
   [:> Delete props])
+
+(defn CalculateIcon [props]
+  [:> Calculate props])
 
 (defn ClearIcon [props]
   [:> Clear props])
@@ -142,6 +158,9 @@
 (defn CallMadeIcon [props]
   [:> CallMade props])
 
+(defn CachedIcon [props]
+  [:> Cached props])
+
 (defn DialpadIcon [props]
   [:> Dialpad props])
 
@@ -187,8 +206,14 @@
 (defn DirectionsRunIcon [props]
   [:> DirectionsRun props])
 
+(defn PeopleIcon [props]
+  [:> People props])
+
 (defn PersonIcon [props]
   [:> Person props])
+
+(defn PictureAsPdfIcon [props]
+  [:> PictureAsPdf props])
 
 (defn InfoIcon [props]
   [:> Info props])
@@ -302,6 +327,9 @@
 (defn ManageSearchIcon [props]
   [:> ManageSearch props])
 
+(defn GetAppIcon [props]
+  [:> GetApp props])
+
 (defn SettingsIcon [props]
   [:svg (handle-props props)
    [:rect {:id "bounding-box-24" :fill "#FFFFFF" :opacity "0" :x "0" :y "0" :width "24" :height "24"}]
@@ -309,6 +337,18 @@
            :id        "settings"
            :fill      "#2B2D33"
            :fill-rule "nonzero"}]])
+
+(defn SummarizeIcon [props]
+  [:> Summarize props])
+
+(defn TroubleshootIcon [props]
+  [:> Troubleshoot props])
+
+(defn InsightsIcon [props]
+  [:> Insights props])
+
+(defn HandymanIcon [props]
+  [:> Handyman props])
 
 (defn EditIcon [props]
   [:> Edit props])
