@@ -13,34 +13,37 @@
   (-> purify (.sanitize (if (= value "<p><br></p>") "" value))))
 
 (defn- read-only-mode [props set-edit-mode-funk]
-  [:> Grid {:container true :style {:position "relative"}}
-   [:> Grid {:container true
-             :item true
-             :style {:border "solid 1px #dadada"
-                     :min-height "2rem"
-                     :padding "1rem"
-                     :display "block"
-                     :font-size "13px"
-                     :overflow "hidden"}
-             :class-name "sun-editor-editable"
-             :dangerouslySetInnerHTML {:__html (sanitize-html (:set-contents props))}}]
-   (let [edit-icon-position (:edit-icon-position props)]
-     [:> Grid {:item true
-               :style
-               (merge
-                {:position "absolute"}
-                (if (contains? #{:left :right} edit-icon-position)
-                  {edit-icon-position 0}
-                  {:right 0}))}
-      [:> IconButton
-       (merge
-        {:on-click set-edit-mode-funk
-         :style    (merge
-                    {:padding 0}
-                    (when (true? (:disable props)) {:opacity 0.5}))
-         :disabled (:disable props)}
-        (when (:id props) {:id       (str "edit-button-" (:id props))}))
-       [EditIcon]]])])
+  (let [{:keys [show-border?]
+         :or {show-border? true}} props]
+    [:> Grid {:container true :style {:position "relative"}}
+     [:> Grid {:container true
+               :item true
+               :style (cond-> {:min-height "2rem"
+                               :padding "1rem"
+                               :display "block"
+                               :font-size "13px"
+                               :overflow "hidden"}
+                        show-border? (assoc :border "solid 1px #dadada"))
+               :class-name "sun-editor-editable"
+               :dangerouslySetInnerHTML {:__html (sanitize-html (:set-contents props))}}]
+     (when set-edit-mode-funk
+       (let [edit-icon-position (:edit-icon-position props)]
+         [:> Grid {:item true
+                   :style
+                   (merge
+                    {:position "absolute"}
+                    (if (contains? #{:left :right} edit-icon-position)
+                      {edit-icon-position 0}
+                      {:right 0}))}
+          [:> IconButton
+           (merge
+            {:on-click set-edit-mode-funk
+             :style    (merge
+                        {:padding 0}
+                        (when (true? (:disable props)) {:opacity 0.5}))
+             :disabled (:disable props)}
+            (when (:id props) {:id       (str "edit-button-" (:id props))}))
+           [EditIcon]]]))]))
 
 (defn- edit-mode [{:keys [on-change] :as props} set-read-only-mode]
   [:> Grid (merge
