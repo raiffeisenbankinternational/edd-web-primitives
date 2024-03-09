@@ -19,6 +19,7 @@
             ["@mui/material/InputLabel" :default InputLabel]
             ["@mui/material/FormHelperText" :default FormHelperText]
             ["@mui/material/Slider" :default Slider]
+            ["@mui/material/index" :refer [Grid]]
 
             ["@mui/x-date-pickers/AdapterDateFns" :refer [AdapterDateFns]]
             ["@mui/x-date-pickers/index" :refer [LocalizationProvider DesktopDatePicker]]
@@ -176,7 +177,7 @@
            minDate maxDate min-date max-date]
     :or   {id                   ::date-picker
            required             false
-           variant "standard"
+           variant              "standard"
            set-touched          (fn [] (print "set-touched"))
            invalid-date-message "Invalid date"}
     :as   props}]
@@ -188,28 +189,28 @@
      [:> DesktopDatePicker
       (merge
        props
-       {:format           "dd.MM.yyyy"
+       {:format                 "dd.MM.yyyy"
         :allowSameDateSelection true
         :label                  label
         :mask                   "__.__.____"
         :clearable              true
         :clear-text             "Clear"
-        :value (if (and (not invalid?)
-                        (string/blank? value))
-                 nil
-                 (js/Date.parse value))
+        :value                  (if (and (not invalid?)
+                                         (string/blank? value))
+                                  nil
+                                  (js/Date.parse value))
         :minDate                (js/Date.parse component-min-date)
         :maxDate                (js/Date.parse component-max-date)
-        :error       error
-        :slotProps {:textField
-                    (merge
-                     {:id          id
-                      :helper-text helper-text
-                      :variant     variant
-                      :required    required
-                      :on-blur              #(comp (set-touched) (set-focused false))}
-                     (when invalid?
-                       {:helper-text invalid-date-message}))}
+        :error                  error
+        :slotProps              {:textField
+                                 (merge
+                                  {:id          id
+                                   :helper-text helper-text
+                                   :variant     variant
+                                   :required    required
+                                   :on-blur     #(comp (set-touched) (set-focused false))}
+                                  (when invalid?
+                                    {:helper-text invalid-date-message}))}
         :on-close               #(comp (set-touched) (set-focused false))
         :on-change              #(utils/handle-date-picker-date-change
                                   (merge
@@ -263,6 +264,38 @@
 (defn RawButton
   [props inner-text]
   [:> Button props inner-text])
+
+(defn EddButton [{:keys [confirmation] :as props} inner-text]
+  (r/with-let [atom (r/atom {:checked? false})]
+    (let [checked? (:checked? @atom)
+          button-props (dissoc props :confirmation)
+          {:keys [confirm cancel]} confirmation
+          container-sx {:max-width "fit-content"}]
+      [:> Grid {:container true :sx container-sx}
+       [:> Zoom
+        {:in    checked? :timeout (if (:checked? @atom) 500 0)
+         :style (cond-> {}
+                  (false? (:checked? @atom)) (assoc :display "none"))}
+        [:> Grid {:container true :spacing 2
+                  :sx        container-sx}
+         [:> Grid {:item true}
+          [:> Button (merge
+                      button-props
+                      (:props confirm))
+           (or (:text confirm) "Yes")]]
+         [:> Grid {:item true}
+          [:> Button (assoc
+                      (merge
+                       button-props
+                       (:props cancel))
+                      :on-click #(swap! atom merge {:checked? false})) "No"]]]]
+       [:> Zoom
+        {:in      (not checked?)
+         :timeout (if (not (:checked? @atom)) 500 0)
+         :style   (cond-> {}
+                    (:checked? @atom) (assoc :display "none"))}
+        [:> Button (assoc button-props :on-click #(swap! atom merge {:checked? true}))
+         inner-text]]])))
 
 (defn RawFab
   ([props icon]

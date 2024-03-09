@@ -49,6 +49,7 @@
 (def RawDatePicker inputs-core/RawDatePicker)
 (def EddDatePicker inputs-core/EddDatePicker)
 (def RawButton inputs-core/RawButton)
+(def EddButton inputs-core/EddButton)
 (def RawFab inputs-core/RawFab)
 (def RawIconButton inputs-core/RawIconButton)
 (def EddIconButton inputs-core/EddIconButton)

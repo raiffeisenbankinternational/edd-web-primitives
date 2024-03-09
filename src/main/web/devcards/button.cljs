@@ -2,7 +2,7 @@
   (:require
    [cljsjs.react]
    [cljsjs.react.dom]
-   [web.primitives.components :refer [RawButton]]
+   [web.primitives.components :refer [RawButton EddButton]]
    [devcards.core :refer-macros (defcard-rg)]
    [web.devcards.utils :refer [apply-stiles]]))
 
@@ -75,3 +75,32 @@
      :color    "secondary"
      :on-click (fn [] (print "on-click"))}
     "Click me"]))
+
+(defcard-rg :edd-button
+  "## Edd Button"
+  (apply-stiles
+   [EddButton
+    {:id       "edd-button-outlined-button-large"
+     :variant  "outlined"
+     :size     "large"
+     :color    "secondary"
+     :on-click (fn [] (print "on-click"))}
+    "Click me"]))
+
+(defcard-rg :edd-button-1
+  "## Edd Button contained"
+  (apply-stiles
+   [EddButton
+    {:id       "edd-button-contained"
+     :variant  "contained"
+     :size     "large"
+     :color    "error"
+     :confirmation {:confirm {:text "Yes, proceed"
+                              :props {:color "secondary"
+                                      :size     "small"}}
+                    :cancel {:text "Cancel"
+                             :props {:variant  "outlined"
+                                     :color "secondary"
+                                     :size     "small"}}}
+     :on-click (fn [] (print "on-click"))}
+    "Delete"]))
